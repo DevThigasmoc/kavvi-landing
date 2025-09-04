@@ -1,5 +1,6 @@
 import React from 'react';
 import { siteData } from '../data/site';
+import Header from './Header';
 import HeroSection from './HeroSection';
 import ViewsSection from './ViewsSection';
 import FeaturesSection from './FeaturesSection';
@@ -12,6 +13,9 @@ import Footer from './Footer';
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
+      <Header />
+      
       {/* Hero Section */}
       <HeroSection data={siteData.hero} />
       

@@ -20,7 +20,7 @@ const HeroSection = ({ data }) => {
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-blue-50/30" />
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-96 bg-gradient-to-r from-primary/5 via-accent/10 to-primary/5 rounded-full blur-3xl" />
       
-      <div className="relative container mx-auto px-6 py-20 lg:py-28">
+      <div className="relative container mx-auto px-6 py-20 lg:py-28 mt-16">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}

@@ -13,3 +13,7 @@ coverage/
 # Misc
 .DS_Store
 .vercel/
+
+# Python
+__pycache__/
+*.pyc

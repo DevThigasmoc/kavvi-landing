@@ -1,34 +1,191 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* KAVVI CRM Brand Colors */
+:root {
+  --kavvi-primary: #002C57;
+  --kavvi-accent: #28C4AC;
+  --kavvi-base: #F4F6F9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Override default theme colors with KAVVI brand */
+:root {
+  --primary: 210 100% 17%;  /* #002C57 */
+  --primary-foreground: 0 0% 98%;
+  --accent: 169 62% 47%;    /* #28C4AC */
+  --accent-foreground: 0 0% 9%;
+  --background: 216 50% 97%; /* #F4F6F9 */
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.dark {
+  --primary: 210 100% 17%;
+  --primary-foreground: 0 0% 98%;
+  --accent: 169 62% 47%;
+  --accent-foreground: 0 0% 9%;
 }
 
-.App-link {
-    color: #61dafb;
+/* Typography - Inter/Poppins */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  letter-spacing: -0.01em;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hero section specific */
+.hero-section {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(40, 196, 172, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 44, 87, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #F4F6F9 0%, rgba(244, 246, 249, 0.8) 100%);
+}
+
+/* Button improvements */
+.btn-primary {
+  background: linear-gradient(135deg, var(--kavvi-primary) 0%, #003d75 100%);
+  box-shadow: 0 4px 14px rgba(0, 44, 87, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(0, 44, 87, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Card enhancements */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 44, 87, 0.1);
+}
+
+.card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 44, 87, 0.1), 0 10px 10px -5px rgba(0, 44, 87, 0.04);
+  border-color: rgba(40, 196, 172, 0.2);
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Text improvements */
+.text-gradient {
+  background: linear-gradient(135deg, var(--kavvi-primary) 0%, var(--kavvi-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Focus states */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--kavvi-accent);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--kavvi-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--kavvi-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #20a085;
+}
+
+/* Section spacing */
+section {
+  scroll-margin-top: 2rem;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Micro-interactions */
+.interactive {
+  transition: all 0.2s ease;
+}
+
+.interactive:hover {
+  transform: translateY(-1px);
+}
+
+.interactive:active {
+  transform: translateY(0);
+}
+
+/* Badge styling */
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+}
+
+/* Remove default App center alignment to maintain natural reading flow */
+.App {
+  text-align: left;
 }
